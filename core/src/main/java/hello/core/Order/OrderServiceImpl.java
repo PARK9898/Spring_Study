@@ -1,18 +1,19 @@
 package hello.core.Order;
 
-import org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter;
-
 import hello.core.discount.DiscountPolicy;
-import hello.core.discount.FixDiscountPolicy;
-import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-	private final MemberRepository memberRepository = new MemoryMemberRepository();
-	private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+	private final MemberRepository memberRepository;
+	//private final DiscountPolicy discountPolicy = new RateDiscountPolicy(); // 직접 객체가 구체적인 선택까지 자기가 선택한다!(안좋은 방법)
+	private final DiscountPolicy discountPolicy; // final 은 무조건 값이 할당되어야한다.
+
+	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+		this.memberRepository = memberRepository;
+		this.discountPolicy = discountPolicy;
+	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
