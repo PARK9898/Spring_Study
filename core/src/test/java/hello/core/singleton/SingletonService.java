@@ -7,5 +7,5 @@ public class SingletonService {
 	public static SingletonService getInstance() {
 		return instance;
 	}
-	
+
 }
