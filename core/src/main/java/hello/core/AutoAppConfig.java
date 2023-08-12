@@ -4,10 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Scope;
 
-import hello.core.member.MemberRepository;
-import hello.core.member.MemoryMemberRepository;
-
+@Scope
 @Configuration
 @ComponentScan(
 	basePackages = "hello.core" , //이 패키지부터 밑으로 컴포넌트 스캔을 해준다.

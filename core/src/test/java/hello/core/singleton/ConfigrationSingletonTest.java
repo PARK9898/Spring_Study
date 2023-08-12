@@ -6,7 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import hello.core.AppConfig;
-import hello.core.Order.OrderService;
 import hello.core.Order.OrderServiceImpl;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemberServiceImpl;

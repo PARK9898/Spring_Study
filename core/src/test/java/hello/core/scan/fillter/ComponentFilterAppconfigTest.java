@@ -14,7 +14,6 @@ public class ComponentFilterAppconfigTest {
 	void filterScan() {
 		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(ComponentFilterAppConfig.class);
 		BeanA beanA = ac.getBean("beanA", BeanA.class);
-		BeanB beanB = ac.getBean("beanB", BeanB.class);
 
 		Assertions.assertThrows(
 			NoSuchBeanDefinitionException.class,
