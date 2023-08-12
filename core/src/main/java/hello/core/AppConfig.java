@@ -1,8 +1,6 @@
 package hello.core;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import hello.core.Order.OrderService;
 import hello.core.Order.OrderServiceImpl;
 import hello.core.discount.DiscountPolicy;
@@ -11,10 +9,8 @@ import hello.core.member.MemberRepository;
 import hello.core.member.MemberService;
 import hello.core.member.MemberServiceImpl;
 import hello.core.member.MemoryMemberRepository;
-//call AppConfig.memberService
-//call AppConfig.memberRepository
-//call Appconfig.orderService
-//이렇게 세번만 호출되네??
+
+
 @Configuration
 public class AppConfig {
     //커멘드 + e 이전 히스토리 보기
